@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour {
 	{
 		Vector3 startPosition = transform.position + new Vector3(0,-1,0);
 		GameObject laser = Instantiate(projectile,startPosition, Quaternion.identity) as GameObject;
-		laser.rigidbody2D.velocity = new Vector3(0, -projectileSpeed, 0);
+		laser.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -projectileSpeed, 0);
 		AudioSource.PlayClipAtPoint(fireAudio, transform.position);
 	}
 }

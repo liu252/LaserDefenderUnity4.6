@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		Vector3 startPosition = transform.position + new Vector3(0,+1,0);
 		GameObject laser = Instantiate(projectile,startPosition, Quaternion.identity) as GameObject;
-		laser.rigidbody2D.velocity = new Vector3(0, projectileSpeed, 0);
-		audio.Play ();
+		laser.GetComponent<Rigidbody2D>().velocity = new Vector3(0, projectileSpeed, 0);
+		GetComponent<AudioSource>().Play ();
 	}
 	
 	void OnTriggerEnter2D(Collider2D collider)
